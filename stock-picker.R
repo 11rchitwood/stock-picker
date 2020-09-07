@@ -45,3 +45,38 @@ print(average)
 
 
 
+
+
+
+
+
+
+
+"Function to calculate the moving average of a specific column from a data frame."
+"a is the dataframe, b is the column number, c is the oldest time frame, and d is the shortest time frame"
+
+
+moving_average_redux<-function(a,b,c,d){
+column<-a[,b]
+range<-length(column)
+long_range<-range-c 
+short_range<-range-d
+long_range_bracket<-column[long_range:range]
+short_range_bracket<-column[short_range:range]
+long_range_mean<-mean(long_range_bracket)
+short_range_mean<-mean(short_range_bracket)
+if(short_range_mean>=long_range_mean){
+print("buy")
+}else{
+print("sell")
+}
+}
+
+
+
+
+
+
+
+
+
