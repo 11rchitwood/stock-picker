@@ -6,6 +6,7 @@ data<-list(AMD,NVDA,INTC,TSLA,T,VZ,DAL,BA,TWTR,TCEHY,NFLX,AAPL,MFST)
 getSymbols(stocks)
 
 
+"This function finds the moving average of the stock's open price."
 
 
 moving_average<-function(x){
@@ -18,10 +19,12 @@ print(average)
 }
 
 
-
-
-
+"Test example of this function."
+"this function will work with the lapply application."
+moving_average(AMD)
 lapply(data,moving_average)
+
+
 
 
 
@@ -44,6 +47,11 @@ print(average)
 
 
 
+
+"test for the volume_function for the AMD stock for its moving volume average over the past 30 days."
+"This function doe not work with lists or with the lapply function."
+volume_function(AMD,30)
+ 
 
 
 
@@ -79,4 +87,9 @@ print("sell")
 
 
 
+
+"Test for the moving_average_redux function to find the opening moving average for both the past 30 days and past 5 days."
+"THe function willl then compare both results and generate a conditional buy or selll as its result based on the comparison."
+"This function does not work with lists and lapply."
+moving_average_redux(AMD,2,30,5)
 
